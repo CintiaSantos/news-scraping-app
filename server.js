@@ -3,7 +3,6 @@ var express = require("express");
 var mongoose = require("mongoose");
 var exphbs = require("express-handlebars");
 var bodyParser = require("body-parser");
-
 // Set up our port to be either the host's designated port, or 3000
 var PORT = process.env.PORT || 3000;
 
@@ -33,9 +32,7 @@ var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines
 // Set mongoose to leverage built in JavaScript ES6 Promises
 // Connect to the Mongo DB
 mongoose.Promise = Promise;
-mongoose.connect(MONGODB_URI, {
-  useMongoClient: true
-});
+mongoose.connect(MONGODB_URI);
 
 // Listen on the port
 app.listen(PORT, function() {
